@@ -15,7 +15,7 @@ public class MainCad {
 
         for (int i = 0; i < quantidade; i ++){
             ModelCad cadastro = new ModelCad();
-        
+            System.out.println("--------------------------");
             System.out.printf("Nome: ");
             cadastro.nome = input.nextLine();
 
@@ -24,17 +24,18 @@ public class MainCad {
 
             System.out.printf("Raça: ");
             cadastro.raca = input.nextLine();
-
+            System.out.println("--------------------------");
 
             lista.add(cadastro);
         }
 
         System.out.println("\nLendas:");
         for (ModelCad cad : lista){
-
+            System.out.println("--------------------------");
             System.out.println("Lenda: " + cad.nome);
             System.out.println("Classe: " + cad.classe);
             System.out.println("Raça: " + cad.raca);
+            System.out.println("--------------------------");
         }
         input.close();
     }
