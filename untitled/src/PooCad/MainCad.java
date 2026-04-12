@@ -1,5 +1,6 @@
 package PooCad;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainCad {
@@ -10,9 +11,11 @@ public class MainCad {
         int quantidade = input.nextInt();
         input.nextLine();
 
+        ArrayList<ModelCad> lista = new ArrayList<>();
+
         for (int i = 0; i < quantidade; i ++){
             ModelCad cadastro = new ModelCad();
-
+        
             System.out.printf("Nome: ");
             cadastro.nome = input.nextLine();
 
@@ -22,10 +25,17 @@ public class MainCad {
             System.out.printf("Raça: ");
             cadastro.raca = input.nextLine();
 
-            System.out.println("\nLendas:");
-            System.out.println("Lenda: "+cadastro.nome);
-            System.out.println("Classe: "+cadastro.classe);
-            System.out.println("Raça: "+cadastro.raca);
+
+            lista.add(cadastro);
         }
+
+        System.out.println("\nLendas:");
+        for (ModelCad cad : lista){
+
+            System.out.println("Lenda: " + cad.nome);
+            System.out.println("Classe: " + cad.classe);
+            System.out.println("Raça: " + cad.raca);
+        }
+        input.close();
     }
 }
