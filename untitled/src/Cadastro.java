@@ -12,5 +12,11 @@ public class Cadastro {
 
         System.out.println("Lenda: "+cadastro1.nome+" Classe: "+cadastro1.classe+" Raça: "+cadastro1.raca);
 
+        Cadastro cadastro2 = new Cadastro();
+        cadastro2.nome = "Zaknafein d'Urden";
+        cadastro2.classe = "Espadachin";
+        cadastro2.raca = "Drow";
+
+        System.out.println("Lenda: "+cadastro2.nome+" Classe: "+cadastro2.classe+" Raça: "+cadastro2.raca);
     }
 }
