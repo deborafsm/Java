@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criar Lenda</title>
+</head>
+<body>
+
+<h2>Cadastrar Lenda</h2>
+
+<input id="nome" placeholder="Nome"><br><br>
+<input id="classe" placeholder="Classe"><br><br>
+<input id="raca" placeholder="Raça"><br><br>
+
+<button onclick="enviar()">Cadastrar</button>
+
+<script>
+    function enviar() {
+        const lenda = {
+            nome: document.getElementById("nome").value,
+            classe: document.getElementById("classe").value,
+            raca: document.getElementById("raca").value
+        };
+
+        fetch("/lendas", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(lenda)
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert("Lenda cadastrada: " + data.nome);
+        });
+    }
+</script>
+
+</body>
+</html>
